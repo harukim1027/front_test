@@ -6,3 +6,41 @@ grid-auto-columns: 1fr;
 
 
 }
+
+.more_text {
+
+text-align:right;
+
+}
+
+.address_button {
+
+margin: 10px;
+
+}
+
+.click_text {
+  text-align:  center;
+  margin: 5px;
+
+}
+
+.address_button_hover {
+border-bottom-color: white;
+border-top-color: gray;
+border-left-color: gray;
+border-right-color: gray;
+border-bottom-width: 0px;
+}
+.address_button_not_hover {
+border-bottom-color: white;
+border-top-color: black;
+border-left-color: white;
+border-right-color: white;
+border-bottom-width: 0px;
+border-top: 1px;
+border-bottom: 0px;
+border-left: 0px;
+border-right: 0px;
+
+}

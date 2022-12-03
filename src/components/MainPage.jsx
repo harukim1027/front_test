@@ -1,11 +1,7 @@
-import { Fragment, useCallback, useRef, useState } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 import '../index.css';
 import React from 'react';
-import GridLayout from 'react-grid-layout';
 import './Test.css';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 function MainPage() {
   const [currentButton, setCurrentButton] = useState(false);

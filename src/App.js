@@ -1,11 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
-import PageTest from 'pages/PageTest';
+import './index.css';
+import PageMainPage from 'pages/PageMainPage';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
 
 function App() {
   return (
-    <div className="App">
-      <PageTest />
+    <div>
+      <Header />
+      <PageMainPage />
+      <Footer />
     </div>
   );
 }

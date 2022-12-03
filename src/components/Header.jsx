@@ -8,20 +8,25 @@ import './Test.css';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 
 function Header() {
-  const [open, setOpen] = useState(false);
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
+  const [open4, setOpen4] = useState(false);
+  const [open5, setOpen5] = useState(false);
+  const [open6, setOpen6] = useState(false);
+
   const user = {
-    name: 'Tom Cook',
-    email: 'tom@example.com',
-    imageUrl:
-      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    name: 'yoona kim',
+    email: 'rlddbsk123@naver.com',
+    imageUrl: require('../../src/assets/Image/profileImage.jpg'),
   };
   const navigation = [
-    { name: '메뉴1', href: '#', current: true },
-    { name: '메뉴2', href: '#', current: false },
-    { name: '메뉴3', href: '#', current: false },
-    { name: '메뉴4', href: '#', current: false },
-    { name: '메뉴5', href: '#', current: false },
-    { name: '메뉴6', href: '#', current: false },
+    { name: '메뉴1', href: setOpen1, current: open1 },
+    { name: '메뉴2', href: setOpen2, current: open2 },
+    { name: '메뉴3', href: setOpen3, current: open3 },
+    { name: '메뉴4', href: setOpen4, current: open4 },
+    { name: '메뉴5', href: setOpen5, current: open5 },
+    { name: '메뉴6', href: setOpen6, current: open6 },
   ];
   const userNavigation = [
     { name: 'Your Profile', href: '#' },
@@ -54,23 +59,113 @@ function Header() {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
-                          <a
-                            key={item.name}
-                            href={item.href}
-                            className={classNames(
-                              item.current
-                                ? 'bg-gray-900 text-white'
-                                : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                              'px-3 py-2 rounded-md text-sm font-medium',
-                            )}
-                            aria-current={item.current ? 'page' : undefined}
-                          >
-                            {item.name}
-                          </a>
+                          <div>
+                            <Menu as="div" className="relative ml-3">
+                              <div>
+                                <Menu.Button className="flex max-w-xs items-center rounded-md bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                                  <span className="sr-only">
+                                    Open user menu
+                                  </span>
+                                  <a
+                                    onClick={() => item.href(!item.current)}
+                                    key={item.name}
+                                    className={classNames(
+                                      item.current
+                                        ? 'bg-gray-900 text-white'
+                                        : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                      'px-3 py-2 rounded-md text-sm font-medium',
+                                    )}
+                                    aria-current={
+                                      item.current ? 'page' : undefined
+                                    }
+                                  >
+                                    {item.name}
+                                  </a>
+                                </Menu.Button>
+                              </div>
+                              <Transition
+                                as={Fragment}
+                                enter="transition ease-out duration-100"
+                                enterFrom="transform opacity-0 scale-95"
+                                enterTo="transform opacity-100 scale-100"
+                                leave="transition ease-in duration-75"
+                                leaveFrom="transform opacity-100 scale-100"
+                                leaveTo="transform opacity-0 scale-95"
+                              >
+                                <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                  <div className="py-1">
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <a
+                                          href="#"
+                                          className={classNames(
+                                            active
+                                              ? 'bg-gray-100 text-gray-900'
+                                              : 'text-gray-700',
+                                            'block px-4 py-2 text-sm',
+                                          )}
+                                        >
+                                          2depth메뉴
+                                        </a>
+                                      )}
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <a
+                                          href="#"
+                                          className={classNames(
+                                            active
+                                              ? 'bg-gray-100 text-gray-900'
+                                              : 'text-gray-700',
+                                            'block px-4 py-2 text-sm',
+                                          )}
+                                        >
+                                          2depth메뉴
+                                        </a>
+                                      )}
+                                    </Menu.Item>
+                                  </div>
+                                  <div className="py-1">
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <a
+                                          href="#"
+                                          className={classNames(
+                                            active
+                                              ? 'bg-gray-100 text-gray-900'
+                                              : 'text-gray-700',
+                                            'block px-4 py-2 text-sm',
+                                          )}
+                                        >
+                                          2depth메뉴
+                                        </a>
+                                      )}
+                                    </Menu.Item>
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <a
+                                          href="#"
+                                          className={classNames(
+                                            active
+                                              ? 'bg-gray-100 text-gray-900'
+                                              : 'text-gray-700',
+                                            'block px-4 py-2 text-sm',
+                                          )}
+                                        >
+                                          2depth메뉴
+                                        </a>
+                                      )}
+                                    </Menu.Item>
+                                  </div>
+                                </Menu.Items>
+                              </Transition>
+                            </Menu>
+                          </div>
                         ))}
                       </div>
                     </div>
                   </div>
+
                   <div className="hidden md:block">
                     <div className="ml-4 flex items-center md:ml-6">
                       <button
